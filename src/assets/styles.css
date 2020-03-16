@@ -1,0 +1,60 @@
+.Content {
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: solid black 1px;
+    overflow-y: scroll;
+}
+.Content::-webkit-scrollbar { display: none; }
+.Category {
+    display: grid;
+    grid-template-rows: 30px min-content;
+    gap: 5px;
+    margin: 5px;
+}
+
+.Topics {
+    border: solid black 1px;
+    height: 200px;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 30px repeat(5, 1fr) 30px;
+}
+.catName {
+    border: solid black 1px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+  }
+  .Search {
+      border: none;
+      border-bottom: solid black 1px;
+      outline: none;
+  }
+  .Pagination {
+      border-top: solid black 1px;
+  }
+  .Topic {
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      cursor: pointer;
+  }
+  .Topic:nth-child(even) {
+      background-color: grey;
+  }
+
+  .Topic:hover {
+      transform: scale(1.01);
+  }

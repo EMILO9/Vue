@@ -1,0 +1,39 @@
+{
+    "Categories": [
+        {"id": 42, "name": "VUE", "isVisible": false, "pagination": [0, 5], "search": ""},
+        {"id": 43, "name": "ANGULAR", "isVisible": false, "pagination": [0, 5], "search": ""},
+        {"id": 44, "name": "REACT", "isVisible": false, "pagination": [0, 5], "search": ""}
+    ],
+    "Topics": [
+        {"id": 42, "name": "VUE1"},
+        {"id": 42, "name": "VUE2"},
+        {"id": 42, "name": "VUE3"},
+        {"id": 42, "name": "VUE4"},
+        {"id": 42, "name": "VUE5"},
+        {"id": 42, "name": "VUE6"},
+        {"id": 42, "name": "VUE7"},
+        {"id": 42, "name": "VUE8"},
+        {"id": 42, "name": "VUE9"},
+        {"id": 42, "name": "VUE10"},
+        {"id": 43, "name": "ANGULAR1"},
+        {"id": 43, "name": "ANGULAR2"},
+        {"id": 43, "name": "ANGULAR3"},
+        {"id": 43, "name": "ANGULAR4"},
+        {"id": 43, "name": "ANGULAR5"},
+        {"id": 43, "name": "ANGULAR6"},
+        {"id": 43, "name": "ANGULAR7"},
+        {"id": 43, "name": "ANGULAR8"},
+        {"id": 43, "name": "ANGULAR9"},
+        {"id": 43, "name": "ANGULAR10"},
+        {"id": 44, "name": "REACT1"},
+        {"id": 44, "name": "REACT2"},
+        {"id": 44, "name": "REACT3"},
+        {"id": 44, "name": "REACT4"},
+        {"id": 44, "name": "REACT5"},
+        {"id": 44, "name": "REACT6"},
+        {"id": 44, "name": "REACT7"},
+        {"id": 44, "name": "REACT8"},
+        {"id": 44, "name": "REACT9"},
+        {"id": 44, "name": "REACT10"}
+    ]
+}
