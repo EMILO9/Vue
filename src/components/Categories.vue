@@ -34,9 +34,8 @@ export default {
     filterTopics (c) {
       return this.Topics.filter(t => t.id === c.id && t.name.toLowerCase().includes(c.search.toLowerCase())).slice(c.pagination[0], c.pagination[1])
     },
-    prev (c) { c.pagination[0] -= 5; c.pagination[1] -= 5; this.updateData(c) },
-    next (c) { c.pagination[0] += 5; c.pagination[1] += 5; this.updateData(c) },
-    updateData (c) { this.$store.commit('updateData', c) }
+    prev (c) { c.pagination[0] -= 5; c.pagination[1] -= 5; this.$forceUpdate() },
+    next (c) { c.pagination[0] += 5; c.pagination[1] += 5; this.$forceUpdate() }
   }
 }
 </script>

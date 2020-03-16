@@ -13,11 +13,5 @@ export const store = new Vuex.Store({
         Categories: state => state.Categories,
         Topics: state => state.Topics
     },
-    mutations: {
-        updateData (state, payload) {
-            state.Categories.map(cat => {
-                if (cat.id === payload.id) { cat = payload; console.log(cat) }
-            }) 
-         }
-    }
+    mutations: {}
   })
