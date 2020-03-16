@@ -2,7 +2,8 @@
     "Categories": [
         {"id": 42, "name": "VUE", "isVisible": false, "pagination": [0, 5], "search": ""},
         {"id": 43, "name": "ANGULAR", "isVisible": false, "pagination": [0, 5], "search": ""},
-        {"id": 44, "name": "REACT", "isVisible": false, "pagination": [0, 5], "search": ""}
+        {"id": 44, "name": "REACT", "isVisible": false, "pagination": [0, 5], "search": ""},
+        {"id": 45, "name": "JQUERY", "isVisible": false, "pagination": [0, 5], "search": ""}
     ],
     "Topics": [
         {"id": 42, "name": "VUE1"},
@@ -34,6 +35,13 @@
         {"id": 44, "name": "REACT7"},
         {"id": 44, "name": "REACT8"},
         {"id": 44, "name": "REACT9"},
-        {"id": 44, "name": "REACT10"}
+        {"id": 44, "name": "REACT10"},
+        {"id": 44, "name": "REACT11"},
+        {"id": 44, "name": "REACT12"},
+        {"id": 44, "name": "REACT13"},
+        {"id": 44, "name": "REACT14"},
+        {"id": 44, "name": "REACT15"},
+        {"id": 44, "name": "REACT16"},
+        {"id": 44, "name": "REACT17"}
     ]
 }

@@ -1,3 +1,4 @@
+ 
 .Content {
     width: 500px;
     height: 500px;
@@ -22,7 +23,7 @@
     height: 200px;
     padding: 5px;
     display: grid;
-    grid-template-rows: 30px repeat(5, 1fr) 30px;
+    grid-template-rows: 30px auto 30px;
 }
 .catName {
     border: solid black 1px;
@@ -42,9 +43,14 @@
   }
   .Pagination {
       border-top: solid black 1px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      gap: 5px;
+      padding-top: 5px;
   }
   .Topic {
-      background-color: aqua;
+      background-color: dodgerblue;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -58,3 +64,58 @@
   .Topic:hover {
       transform: scale(1.01);
   }
+  .box {
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+  .btn {
+      background-color: green;
+      border: none;
+      color: white;
+      outline: none;
+      cursor: pointer;
+  }
+  .btnDisabled {
+      background-color: red;
+  }
+
+  .eye {
+      border: solid black 1px;
+      color: green;
+      cursor: pointer;
+      width: 30px;
+  }
+  .red {
+      color: red;
+  }
+
+  .noContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      color: red;
+      -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
