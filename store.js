@@ -7,11 +7,17 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         Categories: data.Categories,
-        Topics: data.Topics
+        Topics: data.Topics,
+        Selected: null
     },
     getters: {
         Categories: state => state.Categories,
-        Topics: state => state.Topics
+        Topics: state => state.Topics,
+        Selected: state => state.Selected
     },
-    mutations: {}
+    mutations: {
+        selectMe (state, payload) {
+            state.Selected = payload
+        }
+    }
   })

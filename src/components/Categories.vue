@@ -1,5 +1,6 @@
 <template>
   <div class="Categories">
+    <div class="selected" v-if="Selected !== null"><button>{{Selected.name}}</button> <button @click="editSelected(Selected)">EDIT</button> <button @click="deleteSelected(Selected)">DELETE</button></div>
     <div class="addGroup">
       <select class="group" @change="setTag($event)">
         <option value="42">VUE</option>
@@ -16,7 +17,7 @@
         <span class="red" v-if="c.isVisible"><i class="fas fa-eye-slash"></i></span>
         </button></div>
       <div class="Topics" v-if="c.isVisible">
-        <input class="Search" type="search" :placeholder="'Search in ' + c.name" @input="setSearch($event, c)">
+        <input class="Search" type="search" :placeholder="`Search in ${c.name} (${topicSize(c.id)} items)`" @input="setSearch($event, c)">
         <div class="box" v-if="hide(c) > 0">
           <div class="Topic" v-for="(t, index) in filterTopics(c)" :key="t+index">
             <span class="name">{{t.name}}</span>
@@ -24,14 +25,14 @@
               <input v-if="t.editMode" class="aInput" type="text" :placeholder="t.name" v-model="t.name">
               <button @click="t.editMode = !t.editMode" class="aButton"><i class="fas fa-cog"></i></button>
               <button @click="deleteMe(t)" class="aButton"><i class="fas fa-trash"></i></button>
-              <button class="aButton"><i class="fas fa-eye"></i></button>
+              <button class="aButton" @click="selectMe(t)"><i class="fas fa-eye"></i></button>
             </div>
           </div>
         </div>
-        <div v-else class="noContent">No content</div>
+        <div v-else class="noContent">NO CONTENT</div>
         <div class="Pagination">
-          <button class="btn" :class="{'btnDisabled': c.pagination[0] === 0}" @click="prev(c)">Prev</button>
-          <button class="btn" :class="{'btnDisabled': c.pagination[1] >= checkSize(c)}" @click="next(c)">Next</button>
+          <button class="btn" :class="{'btnDisabled': c.pagination[0] === 0}" @click="prev(c)">PREV</button>
+          <button class="btn" :class="{'btnDisabled': c.pagination[1] >= checkSize(c)}" @click="next(c)">NEXT</button>
           </div>
       </div>
     </div>
@@ -53,7 +54,8 @@ export default {
   computed: {
     ...mapGetters([
       'Categories',
-      'Topics'
+      'Topics',
+      'Selected'
     ])
   },
   methods: {
@@ -101,7 +103,21 @@ export default {
     setTitle (e) { this.addTopic.title = e.target.value },
     addMe () {
       let topic = { id: parseInt(this.addTopic.tag), name: this.addTopic.title, editMode: false }
-      if (this.addTopic.tag !== null && this.addTopic.title.length >= 5) this.Topics.push(topic)
+      if (this.addTopic.tag !== null && this.addTopic.title.length >= 5) this.Topics.unshift(topic)
+    },
+    topicSize (sentId) { return this.Topics.filter(t => t.id === sentId).length },
+    selectMe (topic) {
+      this.$store.commit('selectMe', topic)
+    },
+    deleteSelected (Selected) {
+      let selectedTopic = Selected
+      this.Topics.filter(t => {
+        if (t === selectedTopic) { this.Topics.splice(this.Topics.indexOf(t), 1) }
+      })
+    },
+    editSelected (Selected) {
+      let selectedTopic = Selected
+      selectedTopic.name = 'Changed!'
     }
   }
 }
